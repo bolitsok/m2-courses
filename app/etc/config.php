@@ -3,6 +3,7 @@ return [
     'modules' => [
         'Academy_HelloWord' => 1,
         'Academy_Helper' => 1,
+        'Academy_Routers' => 1,
         'Magento_Store' => 1,
         'Magento_Directory' => 1,
         'Magento_Eav' => 1,

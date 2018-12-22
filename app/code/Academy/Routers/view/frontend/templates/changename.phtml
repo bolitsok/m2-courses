@@ -1,0 +1,19 @@
+<form action="<?php echo $block->getAction(); ?>" method="post" id="form-validate" class="form">
+    <fieldset class="fieldset" data-hasrequired="* Required Fields">
+        <div class="field firstname">
+            <label for="firstname" class="label">First Name</label>
+            <div class="control">
+                <input type="text"  name="firstname" id="firstname" value="" title="First Name" class="input-text" />
+            </div>
+        </div>
+        <div class="field lastname">
+            <label for="lastname" class="label">Last Name</label>
+            <div class="control">
+                <input type="text" name="lastname" id="lastname" value="" title="Last Name" class="input-text" />
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions-toolbar">
+        <button name="submit" class="action primary" type="submit"><span>Submit</span></button>
+    </div>
+</form>

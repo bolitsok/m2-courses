@@ -29,7 +29,9 @@
         "magento/module-grouped-product-sample-data": "100.2.*",
         "magento/module-offline-shipping-sample-data": "100.2.*",
         "magento/module-swatches-sample-data": "100.2.*",
-        "magento/sample-data-media": "100.2.*"
+        "magento/sample-data-media": "100.2.*",
+        "snowdog/frontools": "^1.5",
+        "snowdog/theme-blank-sass": "^1.2"
     },
     "require-dev": {
         "phpunit/phpunit": "~6.2.0",
