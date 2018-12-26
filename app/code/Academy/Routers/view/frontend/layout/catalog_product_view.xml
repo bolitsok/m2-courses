@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="css/custom.css" />
+    </head>
+    <body>
+        <referenceContainer name="page.top">
+            <block class="Academy\Routers\Block\Back" name="back_to_overview" after="breadcrumbs" template="Academy_Routers::back.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="product.info.main">
+            <block class="Academy\Routers\Block\ProductMaterials" name="product_materials" before="product.price.tier" template="Academy_Routers::materials.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

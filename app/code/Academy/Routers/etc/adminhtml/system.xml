@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="academy" translate="label">
+            <label>Academy</label>
+        </tab>
+        <section id="academy_general" translate="label" showInDefault="1" showInStore="0" showInWebsite="0">
+            <tab>academy</tab>
+            <label>General</label>
+            <resource>Academy_Routers::config</resource>
+            <group id="back_link" translate="label" showInWebsite="0" showInStore="0" showInDefault="1">
+                <label>Back link</label>
+                <field id="enable_in_product" showInDefault="1" showInWebsite="0" showInStore="0" translate="label" type="select">
+                    <label>Enable in product page</label>
+                    <comment><![CDATA[Enable back link in product page]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="enable_in_account" showInDefault="1" showInWebsite="0" showInStore="0" translate="label" type="select">
+                    <label>Enable in customer account page</label>
+                    <comment><![CDATA[Enable back to dashboard link in customer account page]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="subscribe" translate="label" showInWebsite="0" showInStore="0" showInDefault="1">
+                <label>Subscribe</label>
+                <field id="subscribe_text" showInDefault="1" showInWebsite="0" showInStore="0" translate="label" type="text">
+                    <label>Subscribe text</label>
+                    <comment><![CDATA[Not subscribed text in customer account]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

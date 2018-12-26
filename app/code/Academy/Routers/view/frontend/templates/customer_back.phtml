@@ -1,0 +1,7 @@
+<?php if($block->enabledInAccount()):?>
+    <div class="back_button_customer">
+        <a href="<?php echo $this->getUrl('customer/account/') ?>">
+            <span><?= $block->escapeHtml(__('Back to dashboard')) ?></span>
+        </a>
+    </div>
+<?php endif;?>
