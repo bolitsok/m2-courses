@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="catalog" translate="label" sortOrder="200">
+            <label>Catalog</label>
+        </tab>
+        <section id="catalog" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="test" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Academy</label>
+                <field id="enable_price_filter" showInDefault="1" showInWebsite="0" showInStore="0" translate="label" type="select">
+                    <label>Enable price filter</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="hide_price_lower" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Hide products with price lower than</label>
+                </field>
+            </group>
+        </section>
+        <tab id="academy" translate="label">
+            <label>Academy</label>
+        </tab>
+        <section id="academy_general" translate="label" showInDefault="1" showInStore="0" showInWebsite="0">
+            <tab>academy</tab>
+            <label>General</label>
+            <resource>Academy_Routers::config</resource>
+            <group id="new_customer_notification" translate="label" showInWebsite="0" showInStore="0" showInDefault="1">
+                <label>New customer email notification</label>
+                <field id="enable_new_customer_notification" showInDefault="1" showInWebsite="0" showInStore="0" translate="label" type="select">
+                    <label>Enable new customer notification</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+
+    </system>
+</config>
