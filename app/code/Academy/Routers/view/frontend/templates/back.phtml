@@ -1,0 +1,7 @@
+<?php if($block->enabledInProduct()):?>
+    <div class="back_button">
+        <a onclick="window.history.back()">
+            <span><?= $block->escapeHtml(__('Back')) ?></span>
+        </a>
+    </div>
+<?php endif;?>

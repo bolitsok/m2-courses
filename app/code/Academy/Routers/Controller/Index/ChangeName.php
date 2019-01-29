@@ -9,7 +9,6 @@ use Magento\Customer\Model\Session;
 class ChangeName extends \Magento\Framework\App\Action\Action
 {
     protected $resultPageFactory;
-
     protected $session;
 
     public function __construct(
@@ -26,9 +25,6 @@ class ChangeName extends \Magento\Framework\App\Action\Action
     {
         if($this->session->isLoggedIn()) {
             $resultPage = $this->resultPageFactory->create();
-
-            $block = $resultPage->getLayout()->getBlock('changename');
-            $block->setAction($block->getUrl('*/*/changenamepost'));
 
             return $resultPage;
         } else {

@@ -9,7 +9,6 @@ use Magento\Framework\View\Result\PageFactory;
 class Index extends \Magento\Framework\App\Action\Action
 {
     protected $session;
-
     protected $resultPageFactory;
 
     public function __construct(
@@ -26,14 +25,9 @@ class Index extends \Magento\Framework\App\Action\Action
     public function execute()
     {
         if($this->session->isLoggedIn()){
-            $customerName = $this->session->getCustomer()->getname();
             $resultPage = $this->resultPageFactory->create();
 
-            $block = $resultPage->getLayout()->getBlock('customername');
-            $block->setCustomerName($customerName);
-
-            $this->_view->loadLayout();
-            $this->_view->renderLayout();
+            return $resultPage;
         } else {
             $this->session->authenticate();
         }

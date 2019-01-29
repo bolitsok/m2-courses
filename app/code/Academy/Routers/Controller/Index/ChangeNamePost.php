@@ -6,13 +6,12 @@ use Magento\Framework\App\Action\Context;
 use Magento\Customer\Api\CustomerRepositoryInterface;
 use Magento\Customer\Model\Session;
 use Magento\Framework\Message\ManagerInterface;
+use Academy\Routers\Helper\Data;
 
 class ChangeNamePost extends \Magento\Framework\App\Action\Action
 {
     protected $customerRepository;
-
     protected $session;
-
     protected $messageManager;
 
     public function __construct(
@@ -44,11 +43,11 @@ class ChangeNamePost extends \Magento\Framework\App\Action\Action
 
             $this->customerRepository->save($customer);
 
-            $this->messageManager->addSuccess( __('First name and last name changed!') );
-            $this->_redirect('*/*/success/');
+            $this->messageManager->addSuccessMessage( __('First name and last name changed!') );
+            $this->_redirect(Data::SUCCESS_URL);
         } else {
-            $this->messageManager->addError( __('Fill all fields') );
-            $this->_redirect('*/*/changename/');
+            $this->messageManager->addErrorMessage( __('Fill all fields') );
+            $this->_redirect(Data::CHANGE_NAME_URL);
         }
     }
 }

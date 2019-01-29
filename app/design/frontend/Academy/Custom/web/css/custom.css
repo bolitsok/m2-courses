@@ -1,0 +1,15 @@
+.back_button {
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px;
+    padding-left: 20px;
+    cursor: pointer;
+    font-size: large;
+}
+
+.back_button_customer {
+    cursor: pointer;
+    font-size: large;
+}
