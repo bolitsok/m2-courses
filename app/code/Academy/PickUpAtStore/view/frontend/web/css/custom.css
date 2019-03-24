@@ -1,0 +1,39 @@
+.in_stock {
+    font-weight: bold;
+    color: green;
+}
+
+.not_in_stock {
+    color: red;
+}
+
+.stores {
+    padding-bottom: 25px;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #34495e;
+    line-height: 20px;
+    text-align: center;
+    color: #34495e;
+    left: 2px;
+    top: 0;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.store-info {
+    display: inline-table;
+    margin-left: 7px;
+}
+
+.store-name {
+    font-size: large;
+}
+
+.store-icon {
+    width: 25%;
+}

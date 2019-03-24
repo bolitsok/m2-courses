@@ -1,0 +1,35 @@
+<?php $stores = $block->getStores(); ?>
+<?php $availableStores = $block->getAvailableStores(); ?>
+
+<?php if(count($stores) > 0) : ?>
+    <div class="stores">
+        <table class="table">
+        <thead>
+        <tr>
+            <th>Store</th>
+            <th>Availability</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($stores as $key => $store): ?>
+            <tr>
+                <td>
+                    <div class="circle"><?php echo $key; ?></div>
+                    <div class="store-info">
+                        <span class="store-name"><?php echo $store->getName(); ?></span><br>
+                        <?php echo $store->getAddress(); ?></div>
+                </td>
+                <td>
+                    <?php if(isset($availableStores[$store->getId()])): ?>
+                        <span class="in_stock">In stock</span> <span class="qty"> (<span
+                                class="units"><?php echo $availableStores[$store->getId()]; ?></span> pcs)</span>
+                    <?php else: ?>
+                        <span class="not_in_stock">Not available</span>
+                    <?php endif; ?>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+        </table>
+    </div>
+<?php endif; ?>

@@ -1,0 +1,7 @@
+<?php $stores = $this->helper('Academy\PickUpAtStore\Helper\Data')->getAllStores(); ?>
+<?php foreach ($stores as $store) : ?>
+    <h2><?php echo $this->escapeHtml(__($store->getName())); ?></h2>
+    <p><?php echo $this->escapeHtml(__($store->getAddress())); ?></p>
+    <p><?php echo $this->escapeHtml(__($store->getContacts())); ?></p>
+    <p><?php echo $this->escapeHtml(__($store->getDescription())); ?></p>
+<?php endforeach; ?>

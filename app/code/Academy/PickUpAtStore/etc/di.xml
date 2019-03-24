@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Academy\PickUpAtStore\Api\Data\StoreInterface" type="Academy\PickUpAtStore\Model\Store"/>
+    <preference for="Academy\PickUpAtStore\Api\StoreRepositoryInterface" type="Academy\PickUpAtStore\Model\StoreRepository"/>
+    <preference for="Academy\PickUpAtStore\Api\Data\StoreSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+
+    <virtualType name="Academy\PickUpAtStore\Model\ResourceModel\Store\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">store_list</argument>
+            <argument name="resourceModel" xsi:type="string">Academy\PickUpAtStore\Model\ResourceModel\Store</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="store_grid_list_data_source" xsi:type="string">Academy\PickUpAtStore\Model\ResourceModel\Store\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

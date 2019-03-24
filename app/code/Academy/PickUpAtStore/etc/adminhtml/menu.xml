@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Academy_PickUpAtStore::main"
+             title="Pick Up At Store"
+             module="Academy_PickUpAtStore"
+             resource="Magento_Backend::content"
+             parent="Magento_Backend::stores"
+             sortOrder="1000"/>
+        <add id="Academy_PickUpAtStore::storelist"
+             parent="Academy_PickUpAtStore::main"
+             module="Academy_PickUpAtStore"
+             title="Store List"
+             sortOrder="10"
+             resource="Academy_PickUpAtStore::storelist"
+             action="pickupatstore/storelist"/>
+    </menu>
+</config>
