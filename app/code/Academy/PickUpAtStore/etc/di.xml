@@ -17,4 +17,7 @@
             </argument>
         </arguments>
     </type>
+    <type name="Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider">
+        <plugin name="ProductDataProvider_AfterGetData" type="Academy\PickUpAtStore\Plugin\ProductDataProvider\AfterGetData" />
+    </type>
 </config>

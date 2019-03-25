@@ -8,6 +8,7 @@ use Magento\Framework\View\Element\Template\Context;
 use Magento\Framework\Api\SearchCriteriaBuilder;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Registry;
+use Academy\PickUpAtStore\Helper\Data;
 
 class AvailableStore extends \Magento\Framework\View\Element\Template
 {
@@ -16,6 +17,7 @@ class AvailableStore extends \Magento\Framework\View\Element\Template
     private $searchCriteriaBuilder;
     private $registry;
     private $product;
+    private $_helper;
 
     public function __construct(
         Context $context,
@@ -23,6 +25,7 @@ class AvailableStore extends \Magento\Framework\View\Element\Template
         StoreRepository $storeRepository,
         SearchCriteriaBuilder $searchCriteriaBuilder,
         Registry $registry,
+        Data $helper,
         array $data = []
     )
     {
@@ -31,6 +34,7 @@ class AvailableStore extends \Magento\Framework\View\Element\Template
         $this->productRepository = $productRepository;
         $this->searchCriteriaBuilder = $searchCriteriaBuilder;
         $this->storeRepository = $storeRepository;
+        $this->_helper = $helper;
     }
 
     private function getProduct()
@@ -66,10 +70,6 @@ class AvailableStore extends \Magento\Framework\View\Element\Template
 
     public function getStores()
     {
-        $searchCriteria = $this->searchCriteriaBuilder->create();
-
-        $collection = $this->storeRepository->getList($searchCriteria)->getItems();
-
-        return $collection;
+        return $this->_helper->getAllStores();
     }
 }

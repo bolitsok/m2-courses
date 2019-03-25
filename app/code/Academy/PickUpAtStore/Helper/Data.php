@@ -37,12 +37,8 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         $searchCriteria = $this->searchCriteriaBuilder->create();
 
         $collection = $this->productRepository->getList($searchCriteria)->getItems();
-        
-        if(count($collection) > 0){
-            return true;
-        }
-        
-        return false;
+               
+        return (bool)$collection;
     }
 
     public function getFastDeliveryStore($cartItems)
